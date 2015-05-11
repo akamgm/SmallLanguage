@@ -1,0 +1,34 @@
+#! /usr/bin/python
+
+# First, print a greeting and ask for an input sentence
+print "Enter a sentence to be encoded..."
+sentence = raw_input("> ")
+
+# Next, split the line into separate words
+sentence = sentence.split(' ')
+
+# Now, reverse each word in the sentence
+reverse_sentence = []
+for word in sentence:
+	# But if the word ends in punctuation, don't reverse that part, just the letters
+	d =''
+	if word[-1] in '.!?:;,':
+		d = word[-1]
+		word = word[:len(word)-1]
+	word = word[::-1] + d
+	reverse_sentence.append(word)
+
+# Now, join all of the reversed words and print them out
+print ' '.join(reverse_sentence)
+
+
+
+
+
+
+
+
+
+
+
+
